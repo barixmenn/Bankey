@@ -22,7 +22,7 @@ class LoginView: UIView {
        }
        
        override var intrinsicContentSize: CGSize {
-           return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
+           return CGSize(width: 200, height: 200)
        }
     
 }
@@ -31,7 +31,8 @@ class LoginView: UIView {
 extension LoginView {
     
     private func style() {
-        
+        translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .orange
     }
     
     private func layout() {
