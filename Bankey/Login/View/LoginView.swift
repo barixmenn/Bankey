@@ -15,6 +15,8 @@ class LoginView: UIView {
     let usernameTextField = UITextField()
     let passwordTextField = UITextField()
     let dividerView = UIView()
+    let titleLabel = UILabel()
+    let descriptionLabel = UILabel()
    
 //MARK: - Lifecycle
     override init(frame: CGRect) {
