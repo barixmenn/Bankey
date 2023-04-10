@@ -5,7 +5,7 @@
 //  Created by Baris on 10.04.2023.
 //
 
-import UIKit
+import UIKit.UIViewController
 
 class LoginViewController: UIViewController {
     
@@ -14,7 +14,15 @@ class LoginViewController: UIViewController {
     private let errorMessageLabel = UILabel()
     
     //MARK: - Properties
-    let loginView = LoginView()
+    private let loginView = LoginView()
+    
+    private var username: String? {
+        return loginView.usernameTextField.text
+    }
+    
+    private var password : String? {
+        return loginView.passwordTextField.text
+    }
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +39,32 @@ class LoginViewController: UIViewController {
 //MARK: - Selector
 extension LoginViewController {
     @objc private func singInTapped() {
+        errorMessageLabel.isEnabled = false
+        login()
         
+    }
+    
+    private func login() {
+        guard let username = username, let password = password else {
+            assertionFailure("Username / password should never be nil")
+            return
+        }
+        
+        if username.isEmpty || password.isEmpty {
+            configureView(withMessage: "Username / password cannot be blank")
+            return
+        }
+        
+        if username == "baris" && password == "12345" {
+            signInButton.configuration?.showsActivityIndicator = true
+        } else {
+            configureView(withMessage: "Incorret username / password")
+        }
+    }
+    
+    private func configureView(withMessage message: String) {
+        errorMessageLabel.isHidden = false
+        errorMessageLabel.text = message
     }
 }
 
@@ -48,10 +81,9 @@ extension LoginViewController {
         signInButton.addTarget(self, action: #selector(singInTapped), for: .primaryActionTriggered)
         
         errorMessageLabel.textAlignment = .center
-        errorMessageLabel.textColor = .red
+        errorMessageLabel.textColor = .systemRed
         errorMessageLabel.numberOfLines = 0
-        errorMessageLabel.text = "Error"
-        errorMessageLabel.isHidden = false
+        errorMessageLabel.isHidden = true
     }
     
     
