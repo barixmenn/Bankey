@@ -59,6 +59,7 @@ extension LoginViewController {
         
         if username == "baris" && password == "12345" {
             signInButton.configuration?.showsActivityIndicator = true
+            errorMessageLabel.isHidden = true
         } else {
             configureView(withMessage: "Incorret username / password")
         }
