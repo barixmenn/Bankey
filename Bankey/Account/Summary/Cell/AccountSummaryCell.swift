@@ -8,8 +8,26 @@
 import Foundation
 import UIKit
 
+
+
 class AccountSummaryCell: UITableViewCell {
     
+    enum AccountType: String {
+        case Banking
+        case CreditCard
+        case Investment
+    }
+    
+    struct ViewModel {
+        let accountType: AccountType
+        let accountName: String
+    }
+
+    let viewModel: ViewModel? = nil
+
+    
+    
+    //MARK: - UI Elements
     let typeLabel = UILabel()
     let underlineView = UIView()
     let nameLabel = UILabel()
@@ -20,9 +38,11 @@ class AccountSummaryCell: UITableViewCell {
     
     let chevronImageView = UIImageView()
     
+    //MARK: - Properties
     static let reuseID = "AccountSummaryCell"
     static let rowHeight: CGFloat = 100
     
+    //MARK: - Lifecycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
@@ -78,19 +98,47 @@ extension AccountSummaryCell {
     
     private func layout() {
         NSLayoutConstraint.activate([
+            
+            // type label
             typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
             typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
+            
+            // underline
             underlineView.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 1),
             underlineView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             underlineView.widthAnchor.constraint(equalToConstant: 60),
             underlineView.heightAnchor.constraint(equalToConstant: 4),
+            
+            // name label
             nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 2),
             nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
+            
+            // stack view
             balanceStackView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 0),
             balanceStackView.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 4),
             trailingAnchor.constraint(equalToSystemSpacingAfter: balanceStackView.trailingAnchor, multiplier: 4),
             chevronImageView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 1),
             trailingAnchor.constraint(equalToSystemSpacingAfter: chevronImageView.trailingAnchor, multiplier: 1)
         ])
+    }
+}
+
+extension AccountSummaryCell {
+    func configure(with vm: ViewModel) {
+        
+        typeLabel.text = vm.accountType.rawValue
+        nameLabel.text = vm.accountName
+        
+        switch vm.accountType {
+        case .Banking:
+            underlineView.backgroundColor = .systemTeal
+            balanceLabel.text = "Current balance"
+        case .CreditCard:
+            underlineView.backgroundColor = .systemOrange
+            balanceLabel.text = "Current balance"
+        case .Investment:
+            underlineView.backgroundColor = .systemPurple
+            balanceLabel.text = "Value"
+        }
     }
 }
