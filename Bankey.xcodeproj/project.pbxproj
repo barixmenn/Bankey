@@ -14,6 +14,7 @@
 		60F6FE3129E4B25D0084C90E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6FE3029E4B25D0084C90E /* LoginView.swift */; };
 		60F90D2829E613DC00233877 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F90D2729E613DC00233877 /* OnboardingContainerViewController.swift */; };
 		60F90D2B29E6167E00233877 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F90D2A29E6167E00233877 /* OnboardingViewController.swift */; };
+		60F90D2E29E62F2900233877 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F90D2D29E62F2900233877 /* DummyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		60F6FE3029E4B25D0084C90E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		60F90D2729E613DC00233877 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		60F90D2A29E6167E00233877 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		60F90D2D29E62F2900233877 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +89,8 @@
 		60F6FE2E29E4B2210084C90E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				60F90D2C29E62F1B00233877 /* Controller */,
 				60F6FE2F29E4B2540084C90E /* View */,
-				60F6FE1B29E4AC640084C90E /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -116,6 +118,15 @@
 				60F90D2729E613DC00233877 /* OnboardingContainerViewController.swift */,
 			);
 			path = Container;
+			sourceTree = "<group>";
+		};
+		60F90D2C29E62F1B00233877 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				60F6FE1B29E4AC640084C90E /* LoginViewController.swift */,
+				60F90D2D29E62F2900233877 /* DummyViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60F6FE3129E4B25D0084C90E /* LoginView.swift in Sources */,
+				60F90D2E29E62F2900233877 /* DummyViewController.swift in Sources */,
 				60F6FE1C29E4AC640084C90E /* LoginViewController.swift in Sources */,
 				60F90D2B29E6167E00233877 /* OnboardingViewController.swift in Sources */,
 				60F6FE1829E4AC640084C90E /* AppDelegate.swift in Sources */,
