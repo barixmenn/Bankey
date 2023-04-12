@@ -13,6 +13,8 @@
 		60B03C1529E7498400A7B1DB /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B03C1429E7498400A7B1DB /* AccountSummaryHeaderView.xib */; };
 		60B03C1729E7499400A7B1DB /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03C1629E7499300A7B1DB /* AccountSummaryHeaderView.swift */; };
 		60B03C1A29E761AB00A7B1DB /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03C1929E761AB00A7B1DB /* AccountSummaryCell.swift */; };
+		60B03C1C29E76E8C00A7B1DB /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03C1B29E76E8C00A7B1DB /* Decimal.swift */; };
+		60B03C1E29E76EA100A7B1DB /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03C1D29E76EA100A7B1DB /* CurrencyFormatter.swift */; };
 		60F6FE1829E4AC640084C90E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6FE1729E4AC640084C90E /* AppDelegate.swift */; };
 		60F6FE1C29E4AC640084C90E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6FE1B29E4AC640084C90E /* LoginViewController.swift */; };
 		60F6FE2129E4AC650084C90E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60F6FE2029E4AC650084C90E /* Assets.xcassets */; };
@@ -31,6 +33,8 @@
 		60B03C1429E7498400A7B1DB /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
 		60B03C1629E7499300A7B1DB /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		60B03C1929E761AB00A7B1DB /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
+		60B03C1B29E76E8C00A7B1DB /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
+		60B03C1D29E76EA100A7B1DB /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		60F6FE1429E4AC640084C90E /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F6FE1729E4AC640084C90E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F6FE1B29E4AC640084C90E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 			children = (
 				60F90D3029E6338300233877 /* LocaleState.swift */,
 				60B03BFC29E73B5900A7B1DB /* UIViewController+Utils.swift */,
+				60B03C1B29E76E8C00A7B1DB /* Decimal.swift */,
+				60B03C1D29E76EA100A7B1DB /* CurrencyFormatter.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -274,6 +280,8 @@
 				60B03BFD29E73B5900A7B1DB /* UIViewController+Utils.swift in Sources */,
 				60B03C1729E7499400A7B1DB /* AccountSummaryHeaderView.swift in Sources */,
 				60F90D3129E6338300233877 /* LocaleState.swift in Sources */,
+				60B03C1E29E76EA100A7B1DB /* CurrencyFormatter.swift in Sources */,
+				60B03C1C29E76E8C00A7B1DB /* Decimal.swift in Sources */,
 				60F6FE1C29E4AC640084C90E /* LoginViewController.swift in Sources */,
 				60B03C1A29E761AB00A7B1DB /* AccountSummaryCell.swift in Sources */,
 				60F90D2B29E6167E00233877 /* OnboardingViewController.swift in Sources */,
