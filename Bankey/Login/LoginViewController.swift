@@ -7,6 +7,10 @@
 
 import UIKit.UIViewController
 
+protocol LoginViewControllerDelegate : AnyObject {
+    func didLogin()
+}
+
 class LoginViewController: UIViewController {
     
     //MARK: - UI Elements
@@ -16,6 +20,8 @@ class LoginViewController: UIViewController {
     private let subtitleLabel = UILabel()
     
     //MARK: - Properties
+    
+    weak var delegate : LoginViewControllerDelegate?
     private let loginView = LoginView()
     
     private var username: String? {
@@ -43,6 +49,7 @@ extension LoginViewController {
     @objc private func singInTapped() {
         errorMessageLabel.isEnabled = false
         login()
+
         
     }
     
@@ -57,9 +64,10 @@ extension LoginViewController {
             return
         }
         
-        if username == "baris" && password == "12345" {
+        if username == "Baris" && password == "12345" {
             signInButton.configuration?.showsActivityIndicator = true
             errorMessageLabel.isHidden = true
+            self.delegate?.didLogin()
         } else {
             configureView(withMessage: "Incorret username / password")
         }

@@ -7,38 +7,27 @@
 
 import UIKit
 
+protocol OnboardingContainerViewControllerDelegate : AnyObject {
+    func didFinishOnboarding()
+}
+
 class OnboardingContainerViewController: UIViewController {
 
     //MARK: - Properties
+    weak var delegate : OnboardingContainerViewControllerDelegate?
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
-    var currentVC: UIViewController {
-        didSet {
-        }
-    }
+    var currentVC: UIViewController
+    let closeButton = UIButton(type: .system)
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .systemPurple
-        
-        addChild(pageViewController)
-        view.addSubview(pageViewController.view)
-        pageViewController.didMove(toParent: self)
-        
-        pageViewController.dataSource = self
-        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
-            view.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: pageViewController.view.bottomAnchor),
-        ])
-        
-        pageViewController.setViewControllers([pages.first!], direction: .forward, animated: false, completion: nil)
-        currentVC = pages.first!
+
+        setup()
+        layout()
+        style()
+
     }
     
     
@@ -63,8 +52,55 @@ class OnboardingContainerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Functions
+    
+    private func setup() {
+        view.backgroundColor = .systemPurple
+        
+        addChild(pageViewController)
+        view.addSubview(pageViewController.view)
+        pageViewController.didMove(toParent: self)
+        
+        pageViewController.dataSource = self
+        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
+            view.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor),
+            view.bottomAnchor.constraint(equalTo: pageViewController.view.bottomAnchor),
+        ])
+        
+        pageViewController.setViewControllers([pages.first!], direction: .forward, animated: false, completion: nil)
+        currentVC = pages.first!
+    }
+    
+    private func style() {
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.setTitle("Close", for: [])
+        closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
+    }
+    
+    private func layout() {
+        view.addSubview(closeButton)
+
+        NSLayoutConstraint.activate([
+            closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+            closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
+        ])
+    }
+    
     
 }
+
+//MARK: - Selector
+extension OnboardingContainerViewController {
+    @objc func closeTapped(_ sender: UIButton) {
+        // TODO
+        self.delegate?.didFinishOnboarding()
+    }
+}
+
 
 // MARK: - UIPageViewControllerDataSource
 extension OnboardingContainerViewController: UIPageViewControllerDataSource {
