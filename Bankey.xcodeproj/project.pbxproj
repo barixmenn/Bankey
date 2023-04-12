@@ -10,6 +10,8 @@
 		60B03BFB29E73A6F00A7B1DB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03BFA29E73A6F00A7B1DB /* MainViewController.swift */; };
 		60B03BFD29E73B5900A7B1DB /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03BFC29E73B5900A7B1DB /* UIViewController+Utils.swift */; };
 		60B03C0E29E7470F00A7B1DB /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03C0D29E7470F00A7B1DB /* AccountSummaryViewController.swift */; };
+		60B03C1529E7498400A7B1DB /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60B03C1429E7498400A7B1DB /* AccountSummaryHeaderView.xib */; };
+		60B03C1729E7499400A7B1DB /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03C1629E7499300A7B1DB /* AccountSummaryHeaderView.swift */; };
 		60F6FE1829E4AC640084C90E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6FE1729E4AC640084C90E /* AppDelegate.swift */; };
 		60F6FE1C29E4AC640084C90E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6FE1B29E4AC640084C90E /* LoginViewController.swift */; };
 		60F6FE2129E4AC650084C90E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60F6FE2029E4AC650084C90E /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 		60B03BFA29E73A6F00A7B1DB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		60B03BFC29E73B5900A7B1DB /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		60B03C0D29E7470F00A7B1DB /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
+		60B03C1429E7498400A7B1DB /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
+		60B03C1629E7499300A7B1DB /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		60F6FE1429E4AC640084C90E /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F6FE1729E4AC640084C90E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F6FE1B29E4AC640084C90E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -60,9 +64,27 @@
 		60B03C0C29E7470300A7B1DB /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				60B03C0D29E7470F00A7B1DB /* AccountSummaryViewController.swift */,
+				60B03C0F29E7493600A7B1DB /* Summary */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		60B03C0F29E7493600A7B1DB /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				60B03C1029E7493D00A7B1DB /* Cell */,
+				60B03C0D29E7470F00A7B1DB /* AccountSummaryViewController.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		60B03C1029E7493D00A7B1DB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				60B03C1429E7498400A7B1DB /* AccountSummaryHeaderView.xib */,
+				60B03C1629E7499300A7B1DB /* AccountSummaryHeaderView.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		60F6FE0B29E4AC640084C90E = {
@@ -223,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60B03C1529E7498400A7B1DB /* AccountSummaryHeaderView.xib in Resources */,
 				60F6FE2429E4AC650084C90E /* LaunchScreen.storyboard in Resources */,
 				60F6FE2129E4AC650084C90E /* Assets.xcassets in Resources */,
 			);
@@ -238,6 +261,7 @@
 				60F6FE3129E4B25D0084C90E /* LoginView.swift in Sources */,
 				60F90D2E29E62F2900233877 /* DummyViewController.swift in Sources */,
 				60B03BFD29E73B5900A7B1DB /* UIViewController+Utils.swift in Sources */,
+				60B03C1729E7499400A7B1DB /* AccountSummaryHeaderView.swift in Sources */,
 				60F90D3129E6338300233877 /* LocaleState.swift in Sources */,
 				60F6FE1C29E4AC640084C90E /* LoginViewController.swift in Sources */,
 				60F90D2B29E6167E00233877 /* OnboardingViewController.swift in Sources */,
