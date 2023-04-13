@@ -9,7 +9,7 @@ import UIKit
 
 let appColor: UIColor = .systemTeal
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder,  UIApplicationDelegate {
 
 
     var window: UIWindow?
@@ -36,9 +36,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backgroundColor = appColor
             
         window?.rootViewController = vc
+        
+       registerForNotifications()
+        
         return true
     }
+    
+    
+    private func registerForNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: .logout, object: nil)
+    }
 }
+
 
 //MARK: - Login extension
 extension AppDelegate: LoginViewControllerDelegate {
@@ -62,7 +71,7 @@ extension AppDelegate: OnboardingContainerViewControllerDelegate {
 
 //MARK: - Dummy extension
 extension AppDelegate: LogoutDelegate {
-    func didLogout() {
+    @objc func didLogout() {
         setRootViewController(loginViewController)
     }
 }
