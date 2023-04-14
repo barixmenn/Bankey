@@ -18,6 +18,11 @@
 		60B03C1A29E761AB00A7B1DB /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03C1929E761AB00A7B1DB /* AccountSummaryCell.swift */; };
 		60B03C1C29E76E8C00A7B1DB /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03C1B29E76E8C00A7B1DB /* Decimal.swift */; };
 		60B03C1E29E76EA100A7B1DB /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B03C1D29E76EA100A7B1DB /* CurrencyFormatter.swift */; };
+		60C134C829E972F500EA6634 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C134C729E972F500EA6634 /* Date+Utils.swift */; };
+		60C134CB29E975A400EA6634 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C134CA29E975A400EA6634 /* Profile.swift */; };
+		60C134CF29E975EC00EA6634 /* SummaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C134CE29E975EC00EA6634 /* SummaryService.swift */; };
+		60C134D229E97BC900EA6634 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C134D129E97BC900EA6634 /* AccountService.swift */; };
+		60C134D429E97BCF00EA6634 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C134D329E97BCF00EA6634 /* Account.swift */; };
 		60F6FE1829E4AC640084C90E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6FE1729E4AC640084C90E /* AppDelegate.swift */; };
 		60F6FE1C29E4AC640084C90E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6FE1B29E4AC640084C90E /* LoginViewController.swift */; };
 		60F6FE2129E4AC650084C90E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60F6FE2029E4AC650084C90E /* Assets.xcassets */; };
@@ -41,6 +46,11 @@
 		60B03C1929E761AB00A7B1DB /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
 		60B03C1B29E76E8C00A7B1DB /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
 		60B03C1D29E76EA100A7B1DB /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		60C134C729E972F500EA6634 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		60C134CA29E975A400EA6634 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		60C134CE29E975EC00EA6634 /* SummaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryService.swift; sourceTree = "<group>"; };
+		60C134D129E97BC900EA6634 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		60C134D329E97BCF00EA6634 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		60F6FE1429E4AC640084C90E /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60F6FE1729E4AC640084C90E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60F6FE1B29E4AC640084C90E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +134,40 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		60C134C929E9759400EA6634 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				60C134CA29E975A400EA6634 /* Profile.swift */,
+				60C134D329E97BCF00EA6634 /* Account.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		60C134CC29E975B300EA6634 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				60C134D029E97BC000EA6634 /* Account */,
+				60C134CD29E975C100EA6634 /* Summary */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		60C134CD29E975C100EA6634 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				60C134CE29E975EC00EA6634 /* SummaryService.swift */,
+			);
+			name = Summary;
+			sourceTree = "<group>";
+		};
+		60C134D029E97BC000EA6634 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				60C134D129E97BC900EA6634 /* AccountService.swift */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
 		60F6FE0B29E4AC640084C90E = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +187,8 @@
 		60F6FE1629E4AC640084C90E /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
+				60C134CC29E975B300EA6634 /* Network */,
+				60C134C929E9759400EA6634 /* Models */,
 				60F90D2F29E6337B00233877 /* Utils */,
 				60F6FE2D29E4B21B0084C90E /* Scene */,
 				60F6FE2C29E4B2090084C90E /* Files */,
@@ -225,6 +271,7 @@
 				60B03C1D29E76EA100A7B1DB /* CurrencyFormatter.swift */,
 				60A1908529E8B201004937CD /* NSNotificationName.swift */,
 				60A1908729E8B844004937CD /* UITextField+SecureToggle.swift */,
+				60C134C729E972F500EA6634 /* Date+Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -301,6 +348,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				60F6FE3129E4B25D0084C90E /* LoginView.swift in Sources */,
+				60C134D429E97BCF00EA6634 /* Account.swift in Sources */,
+				60C134C829E972F500EA6634 /* Date+Utils.swift in Sources */,
 				60F90D2E29E62F2900233877 /* DummyViewController.swift in Sources */,
 				60B03BFD29E73B5900A7B1DB /* UIViewController+Utils.swift in Sources */,
 				60B03C1729E7499400A7B1DB /* AccountSummaryHeaderView.swift in Sources */,
@@ -309,12 +358,15 @@
 				60B03C1E29E76EA100A7B1DB /* CurrencyFormatter.swift in Sources */,
 				60B03C1C29E76E8C00A7B1DB /* Decimal.swift in Sources */,
 				60A1908629E8B201004937CD /* NSNotificationName.swift in Sources */,
+				60C134CF29E975EC00EA6634 /* SummaryService.swift in Sources */,
 				60F6FE1C29E4AC640084C90E /* LoginViewController.swift in Sources */,
 				60A1908C29E8C70B004937CD /* ShakeyBellView.swift in Sources */,
 				60B03C1A29E761AB00A7B1DB /* AccountSummaryCell.swift in Sources */,
 				60F90D2B29E6167E00233877 /* OnboardingViewController.swift in Sources */,
 				60F6FE1829E4AC640084C90E /* AppDelegate.swift in Sources */,
 				60B03C0E29E7470F00A7B1DB /* AccountSummaryViewController.swift in Sources */,
+				60C134CB29E975A400EA6634 /* Profile.swift in Sources */,
+				60C134D229E97BC900EA6634 /* AccountService.swift in Sources */,
 				60F90D2829E613DC00233877 /* OnboardingContainerViewController.swift in Sources */,
 				60B03BFB29E73A6F00A7B1DB /* MainViewController.swift in Sources */,
 			);
