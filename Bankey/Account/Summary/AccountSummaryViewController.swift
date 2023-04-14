@@ -116,7 +116,7 @@ extension AccountSummaryViewController {
         fetchAccounts()
         
         /// profile
-        fetchProfile(forUserId: "1") { result in
+        fetchProfile(forUserId: "2") { result in
             switch result {
             case .success(let profile):
                 self.profile = profile
