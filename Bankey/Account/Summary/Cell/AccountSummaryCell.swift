@@ -9,15 +9,9 @@ import Foundation
 import UIKit
 
 
-
 class AccountSummaryCell: UITableViewCell {
     
-    enum AccountType: String {
-        case Banking
-        case CreditCard
-        case Investment
-    }
-    
+    /// view model
     struct ViewModel {
         let accountType: AccountType
         let accountName: String
@@ -27,25 +21,24 @@ class AccountSummaryCell: UITableViewCell {
             return CurrencyFormatter().makeAttributedCurrency(balance)
         }
     }
-
-    let viewModel: ViewModel? = nil
-
-    
-    
-    //MARK: - UI Elements
-    let typeLabel = UILabel()
-    let underlineView = UIView()
-    let nameLabel = UILabel()
-    
-    let balanceStackView = UIStackView()
-    let balanceLabel = UILabel()
-    let balanceAmountLabel = UILabel()
-    
-    let chevronImageView = UIImageView()
     
     //MARK: - Properties
     static let reuseID = "AccountSummaryCell"
     static let rowHeight: CGFloat = 100
+    let viewModel: ViewModel? = nil
+    
+    //MARK: - UI Elements
+    private let typeLabel = UILabel()
+    private let underlineView = UIView()
+    private let nameLabel = UILabel()
+    
+    private let balanceStackView = UIStackView()
+    private let balanceLabel = UILabel()
+    private let balanceAmountLabel = UILabel()
+    
+    private let chevronImageView = UIImageView()
+    
+    
     
     //MARK: - Lifecycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -57,8 +50,10 @@ class AccountSummaryCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
+//MARK: - Layout
 extension AccountSummaryCell {
     private func setup() {
         typeLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -77,13 +72,13 @@ extension AccountSummaryCell {
         balanceStackView.translatesAutoresizingMaskIntoConstraints = false
         balanceStackView.axis = .vertical
         balanceStackView.spacing = 0
-
+        
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceLabel.textAlignment = .right
         balanceLabel.adjustsFontSizeToFitWidth = true
         balanceLabel.text = "Some balance"
-
+        
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.textAlignment = .right
         balanceAmountLabel.adjustsFontSizeToFitWidth = true
@@ -99,7 +94,7 @@ extension AccountSummaryCell {
         
         balanceStackView.addArrangedSubview(balanceLabel)
         balanceStackView.addArrangedSubview(balanceAmountLabel)
-            
+        
         contentView.addSubview(balanceStackView)
         contentView.addSubview(chevronImageView)
     }
@@ -131,6 +126,7 @@ extension AccountSummaryCell {
     }
 }
 
+//MARK: - Configure
 extension AccountSummaryCell {
     func configure(with vm: ViewModel) {
         
