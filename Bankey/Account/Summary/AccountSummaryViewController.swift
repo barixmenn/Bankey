@@ -27,11 +27,13 @@ class AccountSummaryViewController: UIViewController {
         barButtonItem.tintColor = .label
         return barButtonItem
     }()
+    let refreshControl = UIRefreshControl()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupRefreshControl()
         
     }
 }
@@ -112,12 +114,14 @@ extension AccountSummaryViewController {
     }
     
     private func fetchDataAndLoadViews() {
-         let group = DispatchGroup()
+        let group = DispatchGroup()
+        // Testing - random number selection
+        let userId = String(Int.random(in: 1..<4))
         fetchAccounts()
         
         /// profile
         group.enter()
-        fetchProfile(forUserId: "2") { result in
+        fetchProfile(forUserId: userId) { result in
             switch result {
             case .success(let profile):
                 self.profile = profile
@@ -130,7 +134,7 @@ extension AccountSummaryViewController {
         
         /// account
         group.enter()
-        fetchAccounts(forUserId: "1") { result in
+        fetchAccounts(forUserId: userId) { result in
             switch result {
             case .success(let accounts):
                 self.accounts = accounts
@@ -143,6 +147,7 @@ extension AccountSummaryViewController {
         
         group.notify(queue: .main) {
             self.tableView.reloadData()
+            self.tableView.refreshControl?.endRefreshing()
         }
     }
     
@@ -163,12 +168,22 @@ extension AccountSummaryViewController {
                                          balance: $0.amount)
         }
     }
+    
+    private func setupRefreshControl() {
+        refreshControl.tintColor = appColor
+        refreshControl.addTarget(self, action: #selector(refreshContent), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
 }
 //MARK: - Selector
 extension AccountSummaryViewController {
     @objc func logoutTapped(sender: UIButton) {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
+    
+    @objc func refreshContent() {
+              fetchDataAndLoadViews()
+      }
 }
 
 
