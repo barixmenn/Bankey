@@ -12,21 +12,23 @@ class AccountSummaryViewController: UIViewController {
     //MARK: - Properties
     
     ///view models
-    var profile: Profile?
-    var accounts : [Account] = []
+    private var profile: Profile?
+    private var accounts : [Account] = []
     
-    var accountCellViewModels: [AccountSummaryCell.ViewModel] = []
-    var headerViewModel = AccountSummaryHeaderView.ViewModel(welcomeMessage: "Welcome", name: "", date: Date())
-    var headerView = AccountSummaryHeaderView(frame: .zero)
+    private var accountCellViewModels: [AccountSummaryCell.ViewModel] = []
+    private var headerViewModel = AccountSummaryHeaderView.ViewModel(welcomeMessage: "Welcome", name: "", date: Date())
+    private var headerView = AccountSummaryHeaderView(frame: .zero)
     
     
     //MARK: - UI Elements
-    var tableView = UITableView()
+    private var tableView = UITableView()
+    
     lazy var logoutBarButtonItem: UIBarButtonItem = {
         let barButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
         barButtonItem.tintColor = .label
         return barButtonItem
     }()
+    
     let refreshControl = UIRefreshControl()
     
     //MARK: - Lifecycle
@@ -127,7 +129,7 @@ extension AccountSummaryViewController {
                 self.profile = profile
                 self.configureTableHeaderView(with: profile)
             case .failure(let error):
-                print(error.localizedDescription)
+                self.displayError(error)
             }
         }
         group.leave()
@@ -140,7 +142,7 @@ extension AccountSummaryViewController {
                 self.accounts = accounts
                 self.configureTableCells(with: accounts)
             case .failure(let error):
-                print(error.localizedDescription)
+                self.displayError(error)
             }
         }
         group.leave()
@@ -175,14 +177,27 @@ extension AccountSummaryViewController {
         tableView.refreshControl = refreshControl
     }
 }
+
+
+//MARK: - Error Handling
+extension AccountSummaryViewController {
+    private func displayError(_ error: NetworkError) {
+        switch error {
+        case .serverError:
+            self.alertMessageShow(title: .error, message: "Ensure you are connected to the internet. Please try again.")
+        case .decodingError:
+            self.alertMessageShow(title: .error, message: "We could not process your request. Please try again.")
+        }
+    }
+}
 //MARK: - Selector
 extension AccountSummaryViewController {
-    @objc func logoutTapped(sender: UIButton) {
+    @objc private func logoutTapped(sender: UIButton) {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
     
-    @objc func refreshContent() {
-              fetchDataAndLoadViews()
+    @objc private func refreshContent() {
+        fetchDataAndLoadViews()
       }
 }
 

@@ -59,8 +59,6 @@ extension LoginViewController {
     @objc private func singInTapped() {
         errorMessageLabel.isEnabled = false
         login()
-
-        
     }
     
     private func login() {
@@ -69,10 +67,10 @@ extension LoginViewController {
             return
         }
         
-        if username.isEmpty || password.isEmpty {
-            configureView(withMessage: "Username / password cannot be blank")
-            return
-        }
+//        if username.isEmpty || password.isEmpty {
+//            configureView(withMessage: "Username / password cannot be blank")
+//            return
+//        }
         
         if username == "Baris" && password == "12345" {
             signInButton.configuration?.showsActivityIndicator = true

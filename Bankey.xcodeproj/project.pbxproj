@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		606FAED529EAF0AA002C7AC4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606FAED429EAF0AA002C7AC4 /* NetworkError.swift */; };
+		606FAED829EAFE75002C7AC4 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606FAED729EAFE75002C7AC4 /* AlertMessage.swift */; };
 		60A1908629E8B201004937CD /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A1908529E8B201004937CD /* NSNotificationName.swift */; };
 		60A1908829E8B844004937CD /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A1908729E8B844004937CD /* UITextField+SecureToggle.swift */; };
 		60A1908C29E8C70B004937CD /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A1908B29E8C70B004937CD /* ShakeyBellView.swift */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		606FAED429EAF0AA002C7AC4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		606FAED729EAFE75002C7AC4 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		60A1908529E8B201004937CD /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		60A1908729E8B844004937CD /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		60A1908B29E8C70B004937CD /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		606FAED629EAFE6D002C7AC4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				606FAED729EAFE75002C7AC4 /* AlertMessage.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		60A1908929E8C6FB004937CD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +199,7 @@
 			children = (
 				60C134D029E97BC000EA6634 /* Account */,
 				60C134CD29E975C100EA6634 /* Summary */,
+				606FAED429EAF0AA002C7AC4 /* NetworkError.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -247,6 +260,7 @@
 		60F6FE1629E4AC640084C90E /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
+				606FAED629EAFE6D002C7AC4 /* Helpers */,
 				60C134CC29E975B300EA6634 /* Network */,
 				60C134C929E9759400EA6634 /* Models */,
 				60F90D2F29E6337B00233877 /* Utils */,
@@ -494,6 +508,8 @@
 				60F90D3129E6338300233877 /* LocaleState.swift in Sources */,
 				60B03C1E29E76EA100A7B1DB /* CurrencyFormatter.swift in Sources */,
 				60B03C1C29E76E8C00A7B1DB /* Decimal.swift in Sources */,
+				606FAED829EAFE75002C7AC4 /* AlertMessage.swift in Sources */,
+				606FAED529EAF0AA002C7AC4 /* NetworkError.swift in Sources */,
 				60A1908629E8B201004937CD /* NSNotificationName.swift in Sources */,
 				60C134CF29E975EC00EA6634 /* SummaryService.swift in Sources */,
 				60F6FE1C29E4AC640084C90E /* LoginViewController.swift in Sources */,
