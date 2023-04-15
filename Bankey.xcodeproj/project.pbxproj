@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		606FAED529EAF0AA002C7AC4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606FAED429EAF0AA002C7AC4 /* NetworkError.swift */; };
 		606FAED829EAFE75002C7AC4 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606FAED729EAFE75002C7AC4 /* AlertMessage.swift */; };
+		606FAEDC29EB3A26002C7AC4 /* AccountSummaryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606FAEDB29EB3A26002C7AC4 /* AccountSummaryViewControllerTests.swift */; };
 		60A1908629E8B201004937CD /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A1908529E8B201004937CD /* NSNotificationName.swift */; };
 		60A1908829E8B844004937CD /* UITextField+SecureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A1908729E8B844004937CD /* UITextField+SecureToggle.swift */; };
 		60A1908C29E8C70B004937CD /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A1908B29E8C70B004937CD /* ShakeyBellView.swift */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		606FAED429EAF0AA002C7AC4 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		606FAED729EAFE75002C7AC4 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		606FAEDB29EB3A26002C7AC4 /* AccountSummaryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewControllerTests.swift; sourceTree = "<group>"; };
 		60A1908529E8B201004937CD /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		60A1908729E8B844004937CD /* UITextField+SecureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+SecureToggle.swift"; sourceTree = "<group>"; };
 		60A1908B29E8C70B004937CD /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				60C134F429E9872400EA6634 /* AccountSummary */,
 				60C134ED29E9871E00EA6634 /* BankeyUITests.swift */,
+				606FAEDB29EB3A26002C7AC4 /* AccountSummaryViewControllerTests.swift */,
 			);
 			path = BankeyUITests;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				60C134EE29E9871E00EA6634 /* BankeyUITests.swift in Sources */,
 				60C134F829E9878300EA6634 /* AccountTest.swift in Sources */,
 				60C134F629E9872E00EA6634 /* ProfileTest.swift in Sources */,
+				606FAEDC29EB3A26002C7AC4 /* AccountSummaryViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
